@@ -91,9 +91,11 @@ function restart_blockchain_peer {
 }
 
 function request_admin_cert {
-    composer card create --file ca.card -p blockchain-connection-profile.json -u ${BLOCKCHAIN_NETWORK_ENROLL_ID} -s ${BLOCKCHAIN_NETWORK_ENROLL_SECRET}
-    composer card import --file ca.card 
-    composer identity request -c admin@blockchain-network -d ./credentials
+    composer card create -f ca.card -p blockchain-connection-profile.json -u ${BLOCKCHAIN_NETWORK_ENROLL_ID} -s ${BLOCKCHAIN_NETWORK_ENROLL_SECRET}
+    composer card import -f ca.card -c ca
+    rm -f ca.card
+    composer identity request -c ca -d ./credentials
+    composer card delete -c ca
 }
 
 function upload_admin_cert {
