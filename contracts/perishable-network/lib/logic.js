@@ -296,3 +296,4 @@ function setupDemo(setupDemo) {
             return shipmentRegistry.addAll([shipment]);
         });
 }
+

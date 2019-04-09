@@ -4,7 +4,7 @@
   },
   "name": "perishable-network",
   "version": "0.0.1",
-  "description": "IoT tracked perishale network",
+  "description": "any things",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/perishable-network.bna",
     "pretest": "npm run lint",

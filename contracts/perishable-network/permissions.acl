@@ -54,3 +54,4 @@ rule GrantSysAccess {
      resource: "org.hyperledger.composer.system.**"
      action: ALLOW
 }
+
